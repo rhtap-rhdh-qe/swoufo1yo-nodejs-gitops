@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: swoufo1yo-nodejs-gitops
+  description: This is GitOps manifest for swoufo1yo-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: swoufo1yo-nodejs
+    janus-idp.io/tekton: swoufo1yo-nodejs 
+    backstage.io/kubernetes-id: swoufo1yo-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:swoufo1yo-nodejs
